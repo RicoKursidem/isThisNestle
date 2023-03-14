@@ -1,3 +1,3 @@
-Apfel
-Birne
-Banane
+Apple
+App
+Fruity

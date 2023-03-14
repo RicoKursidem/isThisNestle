@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Request
-import backend.backend as backend
+import backend.backend as backend_api
 
 app = FastAPI(
     title="IsThisNestle API",
@@ -14,6 +14,10 @@ def Brands(text: str) -> str:
     Returns:
         json: list of all Barnds
     """
+    
+    brands = backend_api.get_brands(text)
+    
+    return f'brands: {brands}'
     
 @app.post('/api/Brands/add')
 def addBrand(brand: str) -> str:

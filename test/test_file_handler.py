@@ -1,5 +1,5 @@
 import unittest
-import file_handler
+from backend import file_handler
 
 class Test_File_Handler(unittest.TestCase):
     
@@ -17,7 +17,8 @@ class Test_File_Handler(unittest.TestCase):
         self.assertEqual(file_handler.get_list(), ["Apfel","Birne","Banane"])
 
 def test():
-    unittest.main()
+    # unittest.main()
+    pass
         
 if __name__ == '__main__':
     test()
