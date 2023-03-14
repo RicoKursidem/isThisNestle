@@ -23,9 +23,13 @@ def write_list(items):
     Args:
         items (list[str]): this list will overwrite the list in the data file
     """
-    with open(f"{settings.DATA_PATH}/{settings.DATA_File}", 'w') as f:
-        for line in items:
-            f.write(f"{line}\n")
+    try:
+        with open(f"{settings.DATA_PATH}/{settings.DATA_File}", 'w') as f:
+            for line in items:
+                f.write(f"{line}\n")
+        return None
+    except Exception as e:
+        return e
     
 if __name__ == "__main__":
     print("This Script is not meant to be executed")

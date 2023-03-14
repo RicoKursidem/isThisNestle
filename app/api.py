@@ -1,5 +1,5 @@
-from fastapi import FastAPI, Request
-import backend.backend as backend_api
+from fastapi import FastAPI
+import backend.backend_api as backend_api
 
 app = FastAPI(
     title="IsThisNestle API",
@@ -8,7 +8,7 @@ app = FastAPI(
     )
 
 @app.get('/api/Brands')
-def Brands(text: str) -> str:
+def Brands(text: str) -> dict:
     """returns all Brands with "text" as substring
 
     Returns:
@@ -17,10 +17,10 @@ def Brands(text: str) -> str:
     
     brands = backend_api.get_brands(text)
     
-    return f'brands: {brands}'
+    return {'brands': brands}
     
 @app.post('/api/Brands/add')
-def addBrand(brand: str) -> str:
+def addBrand(text: str) -> dict:
     """Adds the "brand to the list 
 
     Args:
@@ -29,9 +29,11 @@ def addBrand(brand: str) -> str:
     Returns:
         str: status of the Request
     """
+    print("hi")
+    return backend_api.add_brand(text)
 
 @app.post('/api/Brands/remove')
-def addBrand(brand: str) -> str:
+def removeBrand(text: str) -> dict:
     """removes the brand, if ther is any, with the same name as "brand"
 
     Args:
@@ -40,5 +42,7 @@ def addBrand(brand: str) -> str:
     Returns:
         str: status iof the Request
     """
+    return backend_api.remove_brand(text)
+
 if __name__ == "__main__":
     pass
