@@ -5,3 +5,14 @@ This is a small Web Development Project to run a List to assist me in not buying
 ## How To Contribute
 
 If there should be Names of Brands that aren't in the List, create an Issue and assign me and I will add these Brands
+
+## How to Run without docker for testing
+
+download all python packages in the requirements.txt into your venv
+
+start the api by navigating to the api.py and executing 
+```bash
+uvicorn api:app --reload
+```
+
+open the index.html in the frontend folder
