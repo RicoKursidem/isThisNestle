@@ -16,11 +16,11 @@ def Brands(text: str) -> dict:
     """
     
     brands = backend_api.get_brands(text)
-    
+    print (brands)
     return {'brands': brands}
     
 @app.post('/api/Brands/add')
-def addBrand(text: str) -> dict:
+def add_brand(text: str) -> dict:
     """Adds the "brand to the list 
 
     Args:
@@ -29,11 +29,10 @@ def addBrand(text: str) -> dict:
     Returns:
         str: status of the Request
     """
-    print("hi")
     return backend_api.add_brand(text)
 
 @app.post('/api/Brands/remove')
-def removeBrand(text: str) -> dict:
+def remove_brand(text: str) -> dict:
     """removes the brand, if ther is any, with the same name as "brand"
 
     Args:
