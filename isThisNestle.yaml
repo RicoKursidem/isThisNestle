@@ -4,6 +4,8 @@ services:
     build: ./backend_api
     image: isThisNestle_api
     container_name: isThisNestle_api
+    volumes:
+      - ./data : /code/app/backend/data
     ports:
       - "1273:5000"
 

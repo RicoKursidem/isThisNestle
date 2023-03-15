@@ -1,10 +1,13 @@
 const input = document.getElementById("textInput")
 const output = document.getElementById("list")
 
+
+host = "localhost:8000"
+
 const env = {
-  brands_url: 'http://localhost:8000/api/Brands?text=',
-  add_url: 'http://localhost:8000/api/Brands/add?text=', 
-  remove_url: 'http://localhost:8000/api/Brands/remove?text='
+  brands_url: 'http://' + host + '/api/Brands?text=',
+  add_url: 'http://'+ host +'/api/Brands/add?text=', 
+  remove_url: 'http://'+ host +'/api/Brands/remove?text='
 }
 
 const btn_add = document.getElementById("btn_add")
