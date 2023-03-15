@@ -11,7 +11,7 @@ If there should be Names of Brands that aren't in the List, create an Issue and 
 download all python packages in the requirements.txt into your venv
 
 ```bash
-pip install -r requirments.txt
+pip install -r requirements.txt
 ```
 
 start the api by navigating to the api.py and executing 
