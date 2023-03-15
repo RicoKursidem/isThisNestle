@@ -1,11 +1,21 @@
 from fastapi import FastAPI
 import backend.backend_api as backend_api
+from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(
     title="IsThisNestle API",
     description="""This API manages a list of the Brands that Nestle owns""",
     version="0.0.1",
     )
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 @app.get('/api/Brands')
 def Brands(text: str) -> dict:
@@ -16,7 +26,6 @@ def Brands(text: str) -> dict:
     """
     
     brands = backend_api.get_brands(text)
-    print (brands)
     return {'brands': brands}
     
 @app.post('/api/Brands/add')

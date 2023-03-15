@@ -9,7 +9,7 @@ def get_list() -> list[str]:
     Returns:
         str[]: List of all lines in teh txt
     """
-    with open(f"{settings.DATA_PATH}/{settings.DATA_File}", 'r') as f:
+    with open(f"{settings.DATA_PATH}/{settings.DATA_File}", 'r', encoding="utf-8") as f:
         lines = f.readlines()
         
         # removing al \n
@@ -24,7 +24,7 @@ def write_list(items):
         items (list[str]): this list will overwrite the list in the data file
     """
     try:
-        with open(f"{settings.DATA_PATH}/{settings.DATA_File}", 'w') as f:
+        with open(f"{settings.DATA_PATH}/{settings.DATA_File}", 'w', encoding="utf-8") as f:
             for line in items:
                 f.write(f"{line}\n")
         return None

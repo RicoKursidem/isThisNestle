@@ -13,7 +13,25 @@ def is_substring_of(string, substring) -> bool:
     Returns:
         bool: returns if the substring is a substring of string :)
     """
-    return substring.lower() in string.lower()
+    if substring.lower() in string.lower():
+        return True
+    
+    if "é" in string:
+        string = string.replace("é", "e")
+        if substring.lower() in string.lower():
+            return True
+        
+    if "'" in string:
+        string_ = string.replace("'", " ")
+        if substring.lower() in string_.lower():
+            return True
+        string_ = string.replace("'", "")
+        if substring.lower() in string_.lower():
+            return True
+    
+    #TODO: More QOL Stuff
+    
+    return False
 
 def get_brands(text: str):
     
