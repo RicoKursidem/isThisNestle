@@ -1,6 +1,6 @@
 FROM python:3.9
-# Folder for fastAPI 
 
+# Folder for fastAPI 
 WORKDIR /code
 
 # installing requierments
@@ -10,4 +10,6 @@ RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
 # starting the app
 COPY ./app /code/app
-CMD ["uvicorn", "app.api:app", "--host", "0.0.0.0", "--port", "5000"]
+
+WORKDIR /code/app
+CMD ["uvicorn", "api:app", "--host", "0.0.0.0", "--port", "5000"]
