@@ -2,18 +2,18 @@ version: '3.9'
 services:
   api:
     build: ./backend_api
-    image: isThisNestle_api
+    image: is_this_nestle_api
     container_name: isThisNestle_api
     volumes:
-      - ./data : /code/app/backend/data
+      - ./data:/code/app/backend/data
     ports:
-      - "1273:5000"
+      - "1274:5000"
 
   webapp:
-    build: ./Frontend
-    image: isThisNestle_webapp
+    build: ./frontend
+    image: is_this_nestle_webapp
     container_name: isThisNestle_webapp
     ports:
-      - "1337:80"
+      - "1338:80"
     depends_on:
       - api

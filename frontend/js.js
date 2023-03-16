@@ -2,7 +2,7 @@ const input = document.getElementById("textInput")
 const output = document.getElementById("list")
 
 
-host = "localhost:8000"
+host = "192.168.178.3:1274"
 
 const env = {
   brands_url: 'http://' + host + '/api/Brands?text=',
