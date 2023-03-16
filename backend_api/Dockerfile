@@ -1,11 +1,12 @@
 FROM python:3.9
-
 # Folder for fastAPI 
+
 WORKDIR /code
 
 # installing requierments
 COPY ./requirements.txt /code/requirements.txt
-RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt --proxy http://10.255.0.10:8080 
+RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
+
 
 # starting the app
 COPY ./app /code/app
